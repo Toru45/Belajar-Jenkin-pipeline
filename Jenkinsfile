@@ -24,7 +24,7 @@ pipeline {
         stage('Test') {
             steps {
                 script {
-                    def data : ArrayList = [
+                    def data = [
                         "firstname" : "Faiq",
                         "Lastname" : "Radi"
                     ]
