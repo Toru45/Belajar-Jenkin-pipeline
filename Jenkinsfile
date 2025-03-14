@@ -7,7 +7,17 @@ pipeline {
     stages {
         stage('Hello') {
             steps {
-                echo("Hello pipeline")
+                echo("Hello pipeline!")
+            }
+        }
+        stage('Build') {
+            steps {
+                echo("Building pipeline...")
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo("Deploying pipeline...")
             }
         }
     }
