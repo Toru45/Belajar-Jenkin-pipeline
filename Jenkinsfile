@@ -2,6 +2,9 @@ pipeline {
     agent {
         node {
             label "linux"
+            tools {
+                jdk "JDK17"
+            }
         }
     }
     stages {
