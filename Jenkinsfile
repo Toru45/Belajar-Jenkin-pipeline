@@ -12,7 +12,16 @@ pipeline {
         }
         stage('Build') {
             steps {
-                echo("Building pipeline...")
+                echo("Start Build...")
+                sh ("./mvnw clean compile test-compile")
+                echo("Finish Build...")
+            }
+        }
+        stage('Test') {
+            steps {
+                echo("Start Test...")
+                sh ("./mvnw test")
+                echo("Finish test...")
             }
         }
         stage('Deploy') {
