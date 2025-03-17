@@ -4,6 +4,9 @@ pipeline {
             label "linux"
         }
     }
+    environment {
+        AUTHOR = 'Faiq'
+    }
     
     tools {
         jdk "JDK17"
@@ -17,9 +20,10 @@ pipeline {
 
         stage('prepare') {
             steps {
+                echo("Author : ${AUTHOR}")
                 echo("Start Job : ${env.JOB_NAME}")
                 echo("Start Build : ${env.BUILD_NUMBER}")
-                echo("SBranch Name : ${env.BRANCH_NAME}")
+                echo("Branch Name : ${env.BRANCH_NAME}")
             }
         }
         stage('Build') {
