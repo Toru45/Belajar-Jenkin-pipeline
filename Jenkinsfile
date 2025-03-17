@@ -14,6 +14,14 @@ pipeline {
                 echo("Hello pipeline!")
             }
         }
+
+        stage('prepare') {
+            steps {
+                echo("Start Job : ${env.JOB_NAME}")
+                echo("Start Build : ${env.BUILD_NUMBER}")
+                echo("SBranch Name : ${env.BRANCH_NAME}")
+            }
+        }
         stage('Build') {
             steps {
                 echo("Start Build...")
