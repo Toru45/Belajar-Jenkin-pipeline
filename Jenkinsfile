@@ -78,12 +78,12 @@ pipeline {
             }
         }
         stage('Deploy') {
-            steps {
-                input {
+            input {
                     message "can we deploy"
                     ok "Yes"
                     submitter "Faiqradi"
                 }
+            steps {
                 echo("Deploying pipeline...")
             }
         }
