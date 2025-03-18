@@ -39,7 +39,8 @@ pipeline {
                     }
                 }
                 excludes{
-                    axis {
+                    exclude{
+                        axis {
                         name "OS"
                         values "mac"
                     }
@@ -47,6 +48,7 @@ pipeline {
                         name "ARC"
                         values "32"
                     }
+                    }  
                 }
                 stages {
                     stage("OS Setup") {
