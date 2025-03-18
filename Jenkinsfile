@@ -8,9 +8,7 @@ pipeline {
         AUTHOR = 'Faiq'
     }
 
-    triggers {
-        cron("*/5 * * * *")
-    }
+
 
     parameters{
         string(name: "NAME", defaultValue: "Faiq", description: "What is your name")
@@ -22,7 +20,6 @@ pipeline {
 
     options {
         disableConcurrentBuilds()
-        timeout(time: 10, unit: 'SECONDS')
     }
     
     tools {
@@ -82,6 +79,11 @@ pipeline {
         }
         stage('Deploy') {
             steps {
+                input {
+                    message "can we deploy"
+                    ok "Yes"
+                    submitter "Faiqradi"
+                }
                 echo("Deploying pipeline...")
             }
         }
