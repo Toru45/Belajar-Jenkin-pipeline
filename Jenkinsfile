@@ -87,6 +87,15 @@ pipeline {
                 echo("Deploying pipeline...")
             }
         }
+
+        stage('release') {
+            when {
+                expression {
+                    return params.DEPLOY
+                }
+            }
+            echo("Release pipeline...")
+        }
     }
 
     post {
