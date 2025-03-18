@@ -26,17 +26,20 @@ pipeline {
         jdk "JDK17"
     }
     stages {
-        stage('preparation'){
+
+        stage('Preparation') {
             stages {
-                stage("prepare java"){
+                stage("Prepare Java") {
                     steps {
                         echo("Preparing Java...")
                         sh('java -version')
+                        sleep(5)
                     }
                 }
-                stage('prepare maven'){
+                stage('Prepare Maven') {
                     steps {
                         echo("Preparing Maven...")
+                        sleep(5)
                     }
                 }
             }       
