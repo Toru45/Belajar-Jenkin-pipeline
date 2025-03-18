@@ -37,7 +37,6 @@ pipeline {
                 stage('prepare maven'){
                     steps {
                         echo("Preparing Maven...")
-                        sh('mvn -version')
                     }
                 }
             }       
