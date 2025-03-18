@@ -12,7 +12,7 @@ pipeline {
         string(name: "NAME", defaultValue: "Faiq", description: "What is your name")
         text(name: "DESCRIPTION", defaultValue: "Faiq", description: "Tell me about yourself")
         booleanParam(name: "DEPLOY", defaultValue: false, description: "Need to deploy?")
-        choice(name: "SOCIAL MEDIA",choices: ['Instagram'. 'Facebook', 'Twitter'], description: "Which social media do you use?")
+        choice(name: "SOCIAL _EDIA",choices: ['Instagram'. 'Facebook', 'Twitter'], description: "Which social media do you use?")
         password(name: "SECRET", defaultValue: "", description: "Encrypt key")
     }
 
@@ -36,7 +36,7 @@ pipeline {
                 echo("Name : ${params.NAME}")
                 echo("Description : ${params.DESCRIPTION}")
                 echo("Deploy : ${params.DEPLOY}")
-                echo("Social Media : ${params.SOCIAL MEDIA}")
+                echo("Social Media : ${params.SOCIAL_MEDIA}")
                 echo("Secret : ${params.SECRET}")   
             }
         }
