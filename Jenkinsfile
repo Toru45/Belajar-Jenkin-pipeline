@@ -8,6 +8,10 @@ pipeline {
         AUTHOR = 'Faiq'
     }
 
+    triggers {
+        cron("*/5 * * * *")
+    }
+
     parameters{
         string(name: "NAME", defaultValue: "Faiq", description: "What is your name")
         text(name: "DESCRIPTION", defaultValue: "Faiq", description: "Tell me about yourself")
