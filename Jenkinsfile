@@ -39,12 +39,12 @@ pipeline {
                     }
                 }
                 stages {
-                stage("OS Setup") {
-                    steps {
-                        echo("Setup ${OS} ${ARC}")
+                    stage("OS Setup") {
+                        steps {
+                            echo("Setup ${OS} ${ARC}")
+                        }
                     }
                 }
-            }
             }
         }
 
