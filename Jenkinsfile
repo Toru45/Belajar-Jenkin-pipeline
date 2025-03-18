@@ -7,6 +7,11 @@ pipeline {
     environment {
         AUTHOR = 'Faiq'
     }
+
+    options {
+        disableConcurrentBuilds()
+        timeout(time: 10, unit: 'MINUTES')
+    }
     
     tools {
         jdk "JDK17"
