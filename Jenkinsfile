@@ -94,7 +94,9 @@ pipeline {
                     return params.DEPLOY
                 }
             }
-            echo("Release pipeline...")
+            steps {
+                echo("Release pipeline...")
+            }
         }
     }
 
