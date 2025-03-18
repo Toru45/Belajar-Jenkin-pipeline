@@ -44,10 +44,10 @@ pipeline {
                         name "OS"
                         values "mac"
                     }
-                    axis {
-                        name "ARC"
-                        values "32"
-                    }
+                        axis {
+                            name "ARC"
+                            values "32"
+                        }
                     }  
                 }
                 stages {
@@ -146,7 +146,13 @@ pipeline {
                 }
             }
             steps {
-                echo("Release pipeline...")
+                withCredentials([usernamePassword(
+                    credentialsId : "faiq_rahasia",
+                    usernameVariable : "USER",
+                    passwordVariable : "PASSWORD"
+                )]){
+                    sh('echo "Release it with -u $USER -p $PASSWORD" > "release.txt"')
+                }
             }
         }
     }
